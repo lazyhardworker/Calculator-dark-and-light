@@ -70,6 +70,9 @@ function calculate() {
         case "/":
             result = current === 0 ? "Error" : prev / current;
             break;
+        case "%":
+            result = prev/100;
+            break;
         default:
             return;
     }
@@ -80,6 +83,25 @@ function calculate() {
     previousInput = "";
     updateDisplay();
 }
+function handlePercentage() {
+    if (currentInput === "") return; // Do nothing if there's no input
+    const number = parseFloat(currentInput);
+    if (isNaN(number)) return; // Exit if not a valid number
+    // Convert the number into a percentage of the last number
+    if (previousInput) {
+        const prev = parseFloat(previousInput);
+        currentInput = (prev * (number / 100)).toString();
+        updateDisplay(); // Show the updated input
+    } else {
+        // If no previous input, just convert the current number to a percentage
+        currentInput = (number / 100).toString();
+        currentEquation = currentInput;
+        updateDisplay(); // Show the updated input
+    }
+}
+
+// Attach event listener to the % button
+document.querySelector('.buttons .grey:nth-child(3)').addEventListener('click', handlePercentage);
 
 document.getElementById("equals").addEventListener("click", calculate);
 
