@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Work Sans",sans-serif;
+}
+:root{
+    --toggle-btn: #4E505F;
+    --grey-btn:#4E505F;
+    --btn-color:#2E2F38;
+    --background:#17171C;
+    --text-color: white;
+}
+.lightmode{
+    --toggle-btn:#4E505F;
+    --grey-btn:#D2D3DA;
+    --btn-color: #D2D3DA;
+    --background:#F1F2F3;
+    --text-color: black;
+}
+body{
+    background: var(--background);
+    color: var(--text-color);
+
+}
+.calculator{
+    display: flex;
+    flex-direction: column;
+    padding: auto;
+}
+.theme{
+height: 50px;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+.button{
+    height: 30px;
+    width: 60px;
+    background-color: var(--btn-color);
+    border-radius: 28px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+    background-image:url(Calculator/moon.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position-y: 2px;
+    background-position-x: 32px;
+}
+.button::before{
+    content: '';
+    background-color: var(--toggle-btn);
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 0.3s all;
+    margin:4px;
+}
+input:checked + .button{
+    background-image: url(Calculator/sun.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 5px;
+}
+input:checked + .button::before{
+    transform: translateX(30px);
+}
+#check{
+    display:none ;
+}
+.display{
+    height: 150px;
+    width: 600px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 8px 0.5px inset;
+    display: flex;
+    font-size: 54px;
+    align-items:flex-end;
+    justify-content:flex-end;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.buttons{
+    width:600px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+button{
+    width: 140px;
+    height: 70px;
+    margin: 0;
+    flex-basis: 1;
+    font-size: 26px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--btn-color);
+    color: var(--text-color);
+}
+
+sup{background-color: var(--btn-color);}
+.first,.second,.third,.fourth,.fifth{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+}
+.grey{
+    background-color: var(--grey-btn);
+}
+.grey>i{
+    background-color: var(--grey-btn);
+}
+.blue{
+    background-color: #4B5EFC;
+}
+.blue>i{
+    background-color: #4B5EFC;  
+}
+button:hover{
+    cursor: pointer;
+}

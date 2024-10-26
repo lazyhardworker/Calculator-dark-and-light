@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/538a5e7cc4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="calculator">
+        <div class="theme">
+           <input type="checkbox" id="check">
+           <label for="check" class="button" onclick="changeTheme()"></label>
+        </div>
+
+        <div class="display" id="display">
+
+        </div>
+
+
+        <div class="buttons">
+            <div class="first">
+                <button class="grey" onclick="clearAll()">AC</button>
+                <button class="grey" id="delete"><i class="fa-solid fa-delete-left"></i></button>
+                <button class="grey" onclick="appendNumber('%')">%</button>
+                <button class="blue" onclick="chooseOperator('/')"><i class="fa-solid fa-divide"></i></button>
+            </div>
+            <div class="second">
+                <button onclick="appendNumber('7')">7</button>
+                <button onclick="appendNumber('8')">8</button>
+                <button onclick="appendNumber('9')">9</button>
+                <button class="blue"onclick="chooseOperator('*')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="third">
+                <button onclick="appendNumber('4')">4</button>
+                <button onclick="appendNumber('5')">5</button>
+                <button onclick="appendNumber('6')">6</button>
+                <button class="blue" onclick="chooseOperator('-')"><i class="fa-solid fa-minus"></i></button>
+            </div>
+            <div class="fourth">
+                <button onclick="appendNumber('1')">1</button>
+                <button onclick="appendNumber('2')">2</button>
+                <button onclick="appendNumber('3')">3</button>
+                <button class="blue" onclick="chooseOperator('+')"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div class="fifth">
+                <button id="square">x<sup>2</sup></button>
+                <button onclick="appendNumber('0')">0</button>
+                <button onclick="appendNumber('.')">.</button>
+                <button class="blue" id="equals"><i class="fa-solid fa-equals"></i></button>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
